@@ -8,6 +8,7 @@ import java.util.Objects;
 public class Input {
 
     public static final String INPUT_DAY_1;
+    public static final String INPUT_DAY_2;
 
     static {
         //DAY 1:
@@ -17,9 +18,17 @@ public class Input {
         } catch (IOException | URISyntaxException e) {
             throw new ExceptionInInitializerError("Failed to load input_day_1.txt");
         }
+        //DAY 2:
+        try {
+            Path path = Paths.get(Objects.requireNonNull(Input.class.getClassLoader().getResource("input/data/input_day_2.txt")).toURI());
+            INPUT_DAY_2 = new String(Files.readAllBytes(path));
+        } catch (IOException | URISyntaxException e) {
+            throw new ExceptionInInitializerError("Failed to load input_day_2.txt");
+        }
     }
 
     public static void main(String[] args) {
         System.out.println(INPUT_DAY_1);
+        System.out.println(INPUT_DAY_2);
     }
 }

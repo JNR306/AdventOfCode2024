@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Utils {
 
-    public static void printArray(String[] array) {
-        for (String element : array) {
+    public static void printArray(Object[] array) {
+        for (Object element : array) {
             System.out.println(element);
         }
     }
@@ -10,6 +13,20 @@ public class Utils {
         for (int element : array) {
             System.out.println(element);
         }
+    }
+
+    public static List<Integer> copyList(List<Integer> list) {
+        return new ArrayList<>(list);
+    }
+
+    public static List<Integer> copyListWithout(List<Integer> list, int indexOfElement) {
+        List<Integer> copiedList = new ArrayList<>(list);
+        copiedList.remove(indexOfElement);
+        return copiedList;
+    }
+
+    public static void printList(List<Object> list) {
+        System.out.println(list);
     }
 
     public static void sortArray(int[] array) {
