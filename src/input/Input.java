@@ -9,6 +9,7 @@ public class Input {
 
     public static final String INPUT_DAY_1;
     public static final String INPUT_DAY_2;
+    public static final String INPUT_DAY_3;
 
     static {
         //DAY 1:
@@ -24,6 +25,13 @@ public class Input {
             INPUT_DAY_2 = new String(Files.readAllBytes(path));
         } catch (IOException | URISyntaxException e) {
             throw new ExceptionInInitializerError("Failed to load input_day_2.txt");
+        }
+        //DAY 3:
+        try {
+            Path path = Paths.get(Objects.requireNonNull(Input.class.getClassLoader().getResource("input/data/input_day_3.txt")).toURI());
+            INPUT_DAY_3 = new String(Files.readAllBytes(path));
+        } catch (IOException | URISyntaxException e) {
+            throw new ExceptionInInitializerError("Failed to load input_day_3.txt");
         }
     }
 
