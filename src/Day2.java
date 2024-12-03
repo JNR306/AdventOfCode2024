@@ -8,8 +8,8 @@ public class Day2 {
     static List<List<Integer>> programs = new ArrayList<>();
 
     public static void splitInput() {
+        programs = new ArrayList<>();
         String[] lines = Input.INPUT_DAY_2.split("\n");
-        Utils.printArray(lines);
         for (String line : lines) {
             String[] levels = line.split(" ");
             ArrayList<Integer> program = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Day2 {
                 safeCount++;
             }
         }
-        System.out.println(safeCount);
+        System.out.println("SOLUTION DAY 2 PART 1: " + safeCount);
     }
 
     //returns if a program is safe
@@ -62,7 +62,7 @@ public class Day2 {
                 }
             }
         }
-        System.out.println(safeCount);
+        System.out.println("SOLUTION DAY 2 PART 2: " + safeCount);
     }
 
     public static void main(String[] args) {

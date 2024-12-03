@@ -6,8 +6,9 @@ public class Day1 {
     static int[] rightList;
 
     public static void splitInput() {
+        leftList = null;
+        rightList = null;
         String[] lines = Input.INPUT_DAY_1.split("\n");
-        Utils.printArray(lines);
         leftList = new int[lines.length];
         rightList = new int[lines.length];
         for (int i = 0; i < lines.length; i++) {
@@ -24,7 +25,7 @@ public class Day1 {
         for (int i = 0; i < leftList.length; i++) {
             distanceBetweenLists += Math.abs(leftList[i] - rightList[i]);
         }
-        System.out.println(distanceBetweenLists);
+        System.out.println("SOLUTION DAY 1 PART 1: " + distanceBetweenLists);
     }
 
     public static void solvePartTwo() {
@@ -32,7 +33,7 @@ public class Day1 {
         for (int element : leftList) {
             similarityScore += element * Utils.containsCount(rightList, element);
         }
-        System.out.println(similarityScore);
+        System.out.println("SOLUTION DAY 1 PART 2: " + similarityScore);
     }
 
     public static void main(String[] args) {

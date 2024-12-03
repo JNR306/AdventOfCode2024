@@ -11,32 +11,30 @@ public class Input {
     public static final String INPUT_DAY_2;
     public static final String INPUT_DAY_3;
 
+    private static final int dayCount = 3;
+
     static {
-        //DAY 1:
-        try {
-            Path path = Paths.get(Objects.requireNonNull(Input.class.getClassLoader().getResource("input/data/input_day_1.txt")).toURI());
-            INPUT_DAY_1 = new String(Files.readAllBytes(path));
-        } catch (IOException | URISyntaxException e) {
-            throw new ExceptionInInitializerError("Failed to load input_day_1.txt");
+        //ALL DAYS:
+        String[] allInputs = new String[dayCount];
+        for (int i = 1; i <= dayCount; i++) {
+            try {
+                //All input files should be named "input_day_X" where X is the corresponding day of december (1-25).
+                //They should be stored in src/input/data/.
+                Path path = Paths.get(Objects.requireNonNull(Input.class.getClassLoader().getResource("input/data/input_day_" + i + ".txt")).toURI());
+                String loadedInput = new String(Files.readAllBytes(path));
+                allInputs[i - 1] = loadedInput;
+            } catch (IOException | URISyntaxException e) {
+                throw new ExceptionInInitializerError("Failed to load input_day_" + i + ".txt");
+            }
         }
-        //DAY 2:
-        try {
-            Path path = Paths.get(Objects.requireNonNull(Input.class.getClassLoader().getResource("input/data/input_day_2.txt")).toURI());
-            INPUT_DAY_2 = new String(Files.readAllBytes(path));
-        } catch (IOException | URISyntaxException e) {
-            throw new ExceptionInInitializerError("Failed to load input_day_2.txt");
-        }
-        //DAY 3:
-        try {
-            Path path = Paths.get(Objects.requireNonNull(Input.class.getClassLoader().getResource("input/data/input_day_3.txt")).toURI());
-            INPUT_DAY_3 = new String(Files.readAllBytes(path));
-        } catch (IOException | URISyntaxException e) {
-            throw new ExceptionInInitializerError("Failed to load input_day_3.txt");
-        }
+        INPUT_DAY_1 = allInputs[0];
+        INPUT_DAY_2 = allInputs[1];
+        INPUT_DAY_3 = allInputs[2];
     }
 
     public static void main(String[] args) {
-        System.out.println(INPUT_DAY_1);
-        System.out.println(INPUT_DAY_2);
+        System.out.println("DAY 1:\n" + INPUT_DAY_1);
+        System.out.println("DAY 2:\n" + INPUT_DAY_2);
+        System.out.println("DAY 3:\n" + INPUT_DAY_3);
     }
 }

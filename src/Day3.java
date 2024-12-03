@@ -46,7 +46,6 @@ public class Day3 {
                 last = ' ';
             }
         }
-        Utils.printListWithArray(numbers);
     }
 
     public static void splitInputPartTwo() {
@@ -98,21 +97,20 @@ public class Day3 {
                 last = ' ';
             }
         }
-        Utils.printListWithArray(numbers);
     }
 
-    public static void solve() {
+    public static void solve(int part) {
         int result = 0;
         for (int[] number : numbers) {
             result += number[0] * number[1];
         }
-        System.out.println(result);
+        System.out.println("SOLUTION DAY 3 PART " + part + ": " + result);
     }
 
     public static void main(String[] args) {
         Day3.splitInputPartOne();
-        Day3.solve();
+        Day3.solve(1);
         Day3.splitInputPartTwo();
-        Day3.solve();
+        Day3.solve(2);
     }
 }
