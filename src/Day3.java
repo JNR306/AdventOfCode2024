@@ -27,7 +27,7 @@ public class Day3 {
                 digit1 = Integer.parseInt(String.valueOf(symbol));
             }
             else if (last == 'D' && Character.isDigit(symbol))
-                digit1 = Integer.parseInt(String.valueOf(digit1) + String.valueOf(symbol));
+                digit1 = Integer.parseInt(digit1 + String.valueOf(symbol));
             else if (last == 'D' && symbol == ',')
                 last = ',';
             else if (last == ',' && Character.isDigit(symbol)) {
@@ -35,7 +35,7 @@ public class Day3 {
                 digit2 = Integer.parseInt(String.valueOf(symbol));
             }
             else if (last == 'E' && Character.isDigit(symbol))
-                digit2 = Integer.parseInt(String.valueOf(digit2) + String.valueOf(symbol));
+                digit2 = Integer.parseInt(digit2 + String.valueOf(symbol));
             else if (last == 'E' && symbol == ')') {
                 numbers.add(new int[]{digit1, digit2});
                 digit1 = 0;
@@ -66,7 +66,7 @@ public class Day3 {
                 digit1 = Integer.parseInt(String.valueOf(symbols[i]));
             }
             else if (last == 'D' && Character.isDigit(symbols[i])) {
-                digit1 = Integer.parseInt(String.valueOf(digit1) + String.valueOf(symbols[i]));
+                digit1 = Integer.parseInt(digit1 + String.valueOf(symbols[i]));
             }
             else if (last == 'D' && symbols[i] == ',') {
                 last = ',';
@@ -76,16 +76,14 @@ public class Day3 {
                 digit2 = Integer.parseInt(String.valueOf(symbols[i]));
             }
             else if (last == 'E' && Character.isDigit(symbols[i])) {
-                digit2 = Integer.parseInt(String.valueOf(digit2) + String.valueOf(symbols[i]));
+                digit2 = Integer.parseInt(digit2 + String.valueOf(symbols[i]));
             }
             else if (last == ' ' && symbols[i] == 'd' && symbols.length > i + 3 && symbols[i+1] == 'o' && symbols[i+2] == '(' && symbols[i+3] == ')') {
                 enabled = true;
-                last = ' ';
                 i += 3;
             }
             else if (last == ' ' && symbols[i] == 'd' && symbols.length > i + 6 && symbols[i+1] == 'o' && symbols[i+2] == 'n' && symbols[i+3] == '\'' && symbols[i+4] == 't' && symbols[i+5] == '(' && symbols[i+6] == ')') {
                 enabled = false;
-                last = ' ';
                 i += 6;
             }
             else if (last == 'E' && symbols[i] == ')') {
@@ -103,15 +101,7 @@ public class Day3 {
         Utils.printListWithArray(numbers);
     }
 
-    public static void solvePartOne() {
-        int result = 0;
-        for (int[] number : numbers) {
-            result += number[0] * number[1];
-        }
-        System.out.println(result);
-    }
-
-    public static void solvePartTwo() {
+    public static void solve() {
         int result = 0;
         for (int[] number : numbers) {
             result += number[0] * number[1];
@@ -121,8 +111,8 @@ public class Day3 {
 
     public static void main(String[] args) {
         Day3.splitInputPartOne();
-        Day3.solvePartOne();
+        Day3.solve();
         Day3.splitInputPartTwo();
-        Day3.solvePartTwo();
+        Day3.solve();
     }
 }
