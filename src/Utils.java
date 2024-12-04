@@ -15,6 +15,15 @@ public class Utils {
         }
     }
 
+    public static void printArray(char[][] array) {
+        for (char[] line : array) {
+            for (char element : line) {
+                System.out.print(element);
+            }
+            System.out.print("\n");
+        }
+    }
+
     public static List<Integer> copyList(List<Integer> list) {
         return new ArrayList<>(list);
     }
