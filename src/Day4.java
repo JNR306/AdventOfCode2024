@@ -43,7 +43,7 @@ public class Day4 {
                     xmasCount++;
             }
         }
-        System.out.println("SOLUTION DAY 4 PART 1" + ": " + xmasCount);
+        System.out.println("SOLUTION DAY 4 PART 1: " + xmasCount);
     }
 
     public static void solvePartTwo() {
@@ -61,7 +61,7 @@ public class Day4 {
                     xmasCount++;
             }
         }
-        System.out.println("SOLUTION DAY 4 PART 2" + ": " + xmasCount);
+        System.out.println("SOLUTION DAY 4 PART 2: " + xmasCount);
     }
 
     public static void main(String[] args) {

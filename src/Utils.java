@@ -18,7 +18,16 @@ public class Utils {
     public static void printArray(char[][] array) {
         for (char[] line : array) {
             for (char element : line) {
-                System.out.print(element);
+                System.out.print(element + " ");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    public static void printArray(int[][] array) {
+        for (int[] line : array) {
+            for (int element : line) {
+                System.out.print(element + " ");
             }
             System.out.print("\n");
         }

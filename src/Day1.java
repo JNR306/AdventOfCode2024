@@ -6,8 +6,6 @@ public class Day1 {
     static int[] rightList;
 
     public static void splitInput() {
-        leftList = null;
-        rightList = null;
         String[] lines = Input.INPUT_DAY_1.split("\n");
         leftList = new int[lines.length];
         rightList = new int[lines.length];

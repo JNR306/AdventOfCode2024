@@ -99,18 +99,26 @@ public class Day3 {
         }
     }
 
-    public static void solve(int part) {
+    public static void solvePartOne() {
         int result = 0;
         for (int[] number : numbers) {
             result += number[0] * number[1];
         }
-        System.out.println("SOLUTION DAY 3 PART " + part + ": " + result);
+        System.out.println("SOLUTION DAY 3 PART 1: " + result);
+    }
+
+    public static void solvePartTwo() {
+        int result = 0;
+        for (int[] number : numbers) {
+            result += number[0] * number[1];
+        }
+        System.out.println("SOLUTION DAY 3 PART 2: " + result);
     }
 
     public static void main(String[] args) {
         Day3.splitInputPartOne();
-        Day3.solve(1);
+        Day3.solvePartOne();
         Day3.splitInputPartTwo();
-        Day3.solve(2);
+        Day3.solvePartTwo();
     }
 }
