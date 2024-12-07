@@ -33,13 +33,22 @@ public class Utils {
         }
     }
 
-    public static List<Integer> copyList(List<Integer> list) {
+    public static <T> List<T> copyList(List<T> list) {
         return new ArrayList<>(list);
     }
 
-    public static List<Integer> copyListWithout(List<Integer> list, int indexOfElement) {
-        List<Integer> copiedList = new ArrayList<>(list);
+    public static <T> List<T> copyListWithout(List<T> list, int indexOfElement) {
+        List<T> copiedList = new ArrayList<>(list);
         copiedList.remove(indexOfElement);
+        return copiedList;
+    }
+
+    public static <T> List<T> moveElementToEndInCopyOfList(List<T> list, int indexOfElement) {
+        List<T> copiedList = new ArrayList<>(list);
+        if (indexOfElement < list.size()) {
+            copiedList.add(list.get(indexOfElement));
+            copiedList.remove(indexOfElement);
+        }
         return copiedList;
     }
 
