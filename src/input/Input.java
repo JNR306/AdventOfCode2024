@@ -18,8 +18,9 @@ public class Input {
     public static final String INPUT_DAY_9;
     public static final String INPUT_DAY_10;
     public static final String INPUT_DAY_11;
+    public static final String INPUT_DAY_12;
 
-    private static final int dayCount = 11;
+    private static final int dayCount = 12;
 
     static {
         //ALL DAYS:
@@ -46,6 +47,7 @@ public class Input {
         INPUT_DAY_9 = allInputs[8];
         INPUT_DAY_10 = allInputs[9];
         INPUT_DAY_11 = allInputs[10];
+        INPUT_DAY_12 = allInputs[11];
     }
 
     public static void main(String[] args) {
@@ -60,5 +62,6 @@ public class Input {
         System.out.println("DAY 9:\n" + INPUT_DAY_9);
         System.out.println("DAY 10:\n" + INPUT_DAY_10);
         System.out.println("DAY 11:\n" + INPUT_DAY_11);
+        System.out.println("DAY 12:\n" + INPUT_DAY_12);
     }
 }
