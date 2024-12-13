@@ -33,6 +33,15 @@ public class Utils {
         }
     }
 
+    public static void printArray(Object[][] array) {
+        for (Object[] line : array) {
+            for (Object element : line) {
+                System.out.print(element + " ");
+            }
+            System.out.print("\n");
+        }
+    }
+
     public static <T> List<T> copyList(List<T> list) {
         return new ArrayList<>(list);
     }
